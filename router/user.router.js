@@ -38,14 +38,15 @@ module.exports = () => {
         .sort()
         .exec(handler.handleOne.bind(null, 'users', res));
     });
+    
     //MÉTODOS PARA INSERTAR
 
 
     router.post('/', (req, res) => {
         //Recibir los parámetros
-
+        console.log(req);
         const usuario= req.body;
-        User.create()
+        User.create(usuario)
             .then(
                 function(data){
                     console.log(data);
